@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #e0e0e0, #ffffff);
+    }
+    .container {
+      width: 260px;
+    }
+    fieldset {
+      border: none;
+      border-radius: 12px;
+      padding: 0;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    #display {
+      width: 100%;
+      height: 50px;
+      font-size: 1.8em;
+      text-align: right;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      background-color: #f8f9fa;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: #333;
+      box-sizing: border-box;
+    }
+    .button {
+      width: 60px;
+      height: 60px;
+      font-size: 1.4em;
+      border: none;
+      border-radius: 8px;
+      margin: 5px;
+      cursor: pointer;
+      background-color: #f0f0f0;
+      color: #333;
+      transition: all 0.2s ease-in-out;
+    }
+    .button:hover {
+      background-color: #e0e0e0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .button:active {
+      background-color: #d0d0d0;
+      transform: translateY(1px);
+      box-shadow: none;
+    }
+    .mathButtons {
+      background-color: #f9f9f9;
+      color: #007bff;
+    }
+    .mathButtons:hover {
+      background-color: #e7f0ff;
+    }
+    #clearButton {
+      background-color: #dc3545;
+      color: #ffffff;
+    }
+    #clearButton:hover {
+      background-color: #c82333;
+    }
+    .button.digits {
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <fieldset id="container">
+      <form name="calculator">
+        <input id="display" type="text" name="display" readonly>
+        <br>
+        <input class="button digits" type="button" value="7" onclick="calculator.display.value += '7'">
+        <input class="button digits" type="button" value="8" onclick="calculator.display.value += '8'">
+        <input class="button digits" type="button" value="9" onclick="calculator.display.value += '9'">
+        <input class="button mathButtons" type="button" value="+" onclick="calculator.display.value += ' + '">
+        <br>
+        <input class="button digits" type="button" value="4" onclick="calculator.display.value += '4'">
+        <input class="button digits" type="button" value="5" onclick="calculator.display.value += '5'">
+        <input class="button digits" type="button" value="6" onclick="calculator.display.value += '6'">
+        <input class="button mathButtons" type="button" value="-" onclick="calculator.display.value += ' - '">
+        <br>
+        <input class="button digits" type="button" value="1" onclick="calculator.display.value += '1'">
+        <input class="button digits" type="button" value="2" onclick="calculator.display.value += '2'">
+        <input class="button digits" type="button" value="3" onclick="calculator.display.value += '3'">
+        <input class="button mathButtons" type="button" value="x" onclick="calculator.display.value += ' * '">
+        <br>
+        <input id="clearButton" class="button" type="button" value="C" onclick="calculator.display.value = ''">
+        <input class="button digits" type="button" value="0" onclick="calculator.display.value += '0'">
+        <input class="button mathButtons" type="button" value="=" onclick="calculator.display.value = eval(calculator.display.value)">
+        <input class="button mathButtons" type="button" value="/" onclick="calculator.display.value += ' / '">
+      </form>
+    </fieldset>
+  </div>
+</body>
+</html>
